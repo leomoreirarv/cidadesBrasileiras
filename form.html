@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Cidades Ajax</title>
+        <script src="Cidades.class.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <form action="#" method="post">
+            <label for="estado">
+                Estado:
+                <select name="estado" id="estado" onchange="xml.carregaCidades(this.value);">
+                    <option>Selecione um estado</option>
+                </select>
+            </label>
+            <label for="cidade">
+                Cidade:
+                <select name="cidade" id="cidade"></select>
+            </label>
+        </form>
+        <script type="text/javascript">
+            var xml = new Cidades();
+            xml.setUrlXML("cidades.xml");
+            xml.setComboEstados("estado");
+            xml.setComboCidades("cidade");
+            xml.carregaXML();
+        </script>
+    </body>
+</html>
